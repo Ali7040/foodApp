@@ -1,0 +1,9 @@
+
+<div class="container">
+  @for(current of [1,2,3,4,5]; track current){
+    <img
+    [src]="getStarImage(current)"
+    [ngStyle]="styles"
+    />
+  }
+</div>
