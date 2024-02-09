@@ -1,0 +1,30 @@
+// a {
+//   background-color: whitesmoke;
+//   padding: 0.3rem 1rem;
+//   margin: 0.2rem 0.15rem;
+//   border-radius: 10rem;
+//   font-weight: 600;
+//   // color: blue;
+// }
+
+.tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding-left: 1.5rem;
+  // opacity: 0.8;
+  &_link {
+    background-color: whitesmoke;
+    padding: 00.3rem 1rem;
+    margin: 0.2rem 0.15rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    color: #ec7a49;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: none;
+  }
+  &_link:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 5px rgb(221, 216, 216);
+  }
+}

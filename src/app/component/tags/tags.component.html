@@ -1,0 +1,7 @@
+@if(tags){ @for(tag of tags; track tag){
+<div class="tags">
+  <a routerLink="/tag/{{ tag.name }}" class="tags_link"
+    >{{ tag.name }}({{ tag.count }})</a
+  >
+</div>
+} }
