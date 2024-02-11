@@ -4,7 +4,7 @@
 <ul>
   @for (food of foods; track food){
   <div class="card">
-    <a routerLink="/food">
+    <a routerLink="/food/{{ food.id }}">
       <img [src]="food.imageUrl" [alt]="food.name" />
       <div class="content">
         <div class="name">
@@ -14,7 +14,6 @@
         <div class="stars">
           <star-rating [stars]="food.stars" />
         </div>
-
         <div class="product-item-footer">
           <div class="origins">
             @for (origin of food.origins; track origin) {

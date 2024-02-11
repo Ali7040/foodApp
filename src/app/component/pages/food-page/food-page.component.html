@@ -8,5 +8,27 @@
     <div class="rating">
       <star-rating [stars]="food.stars" />
     </div>
+    <div class="origins">
+      @for (origin of food.origins; track origin) {
+      <span>{{ origin }}</span>
+      }
+    </div>
+    <div class="tags">
+      @for(tag of food.tags; track tag){
+      <a routerLink="/tag/{{ tag }}" class="tags_link">{{ tag }}</a>
+      }
+    </div>
+
+    <div class="cook-time">
+      <span
+        >Time to cook about <strong>{{ food.cookTime }}</strong> min ⏱️</span
+      >
+    </div>
+    <div class="price">
+      <span>
+        {{ food.price | currency }}
+      </span>
+    </div>
+    <button class="cart-btn">Add to Cart</button>
   </div>
 </div>
