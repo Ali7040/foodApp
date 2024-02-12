@@ -116,15 +116,28 @@ ul {
   transition: opacity 1s ease, visibility 1.3s ease;
 }
 
+///Cart count
+
 .cart {
-  &-logo {
-    position: relative;
+  .more-than-9 {
+    background: #e67136;
+    color: white;
+    padding: 0.3rem 0.35rem;
+    border-radius: 100rem;
+    font-size: 0.8rem;
   }
-  span {
-    position: absolute;
-    right: 17px;
-    top: 9px;
-    // visibility: visible !important;
-    color: var(--gray-700);
+  .less-than-10 {
+    background: #e67136;
+    color: white;
+    padding: 0.1rem 0.35rem;
+    border-radius: 100rem;
+    font-size: 0.9rem;
+  }
+  .for-one {
+    background: #e67136;
+    color: white;
+    padding: 0.1rem 0.45rem;
+    border-radius: 100rem;
+    font-size: 0.9rem;
   }
 }
