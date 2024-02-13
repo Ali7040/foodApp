@@ -6,11 +6,19 @@ import { CommonModule } from '@angular/common';
 import { StarRatingComponent } from '../../star-rating/star-rating.component';
 import { TagsComponent } from '../../tags/tags.component';
 import { CartService } from '../../../services/cart.service';
+import { NotFoundComponent } from '../../not-found/not-found.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [CommonModule, StarRatingComponent, TagsComponent, RouterLink],
+  imports: [
+    CommonModule,
+    StarRatingComponent,
+    TagsComponent,
+    RouterLink,
+    NotFoundComponent,
+  ],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.scss',
 })
@@ -25,7 +33,9 @@ export class FoodPageComponent {
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        this.food = foodService.getFoodById(params['id']);
+        foodService
+          .getFoodById(params['id'])
+          .subscribe((serverFood) => (this.food = serverFood));
       }
     });
   }

@@ -1,6 +1,11 @@
 <app-search></app-search>
-
 <app-tags></app-tags>
+<app-not-found
+  [visible]="!foods || !foods.length"
+  resetLinkText="Reset Search!"
+>
+</app-not-found>
+
 <ul>
   @for (food of foods; track food){
   <div class="card">

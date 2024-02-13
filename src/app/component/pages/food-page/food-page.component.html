@@ -1,3 +1,10 @@
+<app-not-found
+  [visible]="!food"
+  notFound="Food Not Found!"
+  resetLinkText="Back to Home Page!"
+  re
+></app-not-found>
+@if(food){
 <div class="container">
   <img [src]="food.imageUrl" [alt]="food.name" />
   <div class="details">
@@ -29,6 +36,7 @@
         {{ food.price | currency }}
       </span>
     </div>
-    <button class="cart-btn">Add to Cart</button>
+    <button class="cart-btn" (click)="addToCart()">Add to Cart</button>
   </div>
 </div>
+}
