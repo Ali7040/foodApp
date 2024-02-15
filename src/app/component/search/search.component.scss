@@ -1,23 +1,23 @@
-.search{
+.search {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  &_input{
+  &_input {
     border-radius: 10rem 0 0 10rem;
     border: none;
     height: 3rem;
-    width: 20rem;
+    width: 28rem;
     background-color: #f1f1f1;
     padding: 1.2rem;
     font-size: 1.1rem;
     font-weight: 500;
     outline: none;
   }
-  &_button{
+  &_button {
     height: 3rem;
     width: 5rem;
-    font-size: 1rem ;
+    font-size: 1rem;
     border-radius: 0 10rem 10rem 0;
     border: none;
     background-color: oklch(53.32% 0.24 61.68);
@@ -25,7 +25,7 @@
     opacity: 0.7;
     outline: none;
   }
-  &_button:hover{
+  &_button:hover {
     opacity: 0.8;
     cursor: pointer;
   }
