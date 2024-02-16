@@ -4,17 +4,21 @@
     <a routerLink="/" class="logo">FoOdy</a>
     <nav>
       <ul>
+        @if(!isAuth){
         <li>
           <a routerLink="/login">Login</a>
         </li>
+        } @if(isAuth){
+
         <li class="menu-container">
-          <a routerLink="/user">user</a>
+          <a routerLink="/user">{{ user.username }}</a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
             <a routerLink="/orders"> orders</a>
-            <a> Logout </a>
+            <a (click)="logout()"> Logout </a>
           </div>
         </li>
+        }
         <li>
           <a routerLink="/cart-page" class="cart">
             Cart
