@@ -1,0 +1,60 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFound="Cart is Empty!"
+  resetLinkText="Go to Home Page!"
+>
+</app-not-found>
+
+@if(cart && cart.items.length){
+<!-- // if cart is not empty and cart items length greater then 0  -->
+<div class="container">
+  <ul>
+    @for(cartItem of cart.items; track cartItem){
+    <li>
+      <div class="food-name-container">
+        <img
+          [src]="cartItem.food.imageUrl"
+          [alt]="cartItem.food.name"
+          class="food-name"
+        />
+      </div>
+      <div>
+        <a routerLink="/food/{{ cartItem.food.id }}">
+          {{ cartItem.food.name }}
+        </a>
+      </div>
+      <div class="">
+        <select
+          #quantitySelect
+          [value]="cartItem.quantity"
+          (change)="changeQuantity(cartItem, quantitySelect.value)"
+        >
+          <option value="1" default>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="">
+        {{ cartItem.price | currency }}
+      </div>
+      <div class="">
+        <button class="removeBtn" (click)="removeCartItem(cartItem)">
+          Remove
+        </button>
+      </div>
+    </li>
+    }
+  </ul>
+  <div class="checkout">
+    <div class="">
+      <div class="foods-count">{{ cart.totalCount }}</div>
+      <div class="total-price">{{ cart.totalPrice | currency }}</div>
+    </div>
+    <a routerLink="/checkout">proceed to checkout</a>
+  </div>
+</div>
+}
