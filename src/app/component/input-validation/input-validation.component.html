@@ -1,0 +1,7 @@
+@if(errorMessages && showError){
+<div class="error_list">
+  @for(errorMessage of errorMessages; track errorMessage){
+  {{ errorMessage }}
+  }
+</div>
+}
